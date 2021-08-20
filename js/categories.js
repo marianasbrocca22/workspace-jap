@@ -7,12 +7,12 @@ var minCount = undefined;
 var maxCount = undefined;
 
 function sortCategories(criteria, array){
-    let result = [];
+    let result = []; //lista sin nada
     if (criteria === ORDER_ASC_BY_NAME)
     {
         result = array.sort(function(a, b) {
-            if ( a.name < b.name ){ return -1; }
-            if ( a.name > b.name ){ return 1; }
+            if ( a.name < b.name ){ return -1; } // si a es menor me lo devuelve al reves 
+            if ( a.name > b.name ){ return 1; } //si a es mayor devuelve la lista normal
             return 0;
         });
     }else if (criteria === ORDER_DESC_BY_NAME){
@@ -37,15 +37,15 @@ function sortCategories(criteria, array){
 
 function showCategoriesList(){
 
-    let htmlContentToAppend = "";
-    for(let i = 0; i < currentCategoriesArray.length; i++){
-        let category = currentCategoriesArray[i];
+    let htmlContentToAppend = ""; // contendio que va a agregar a un html
+    for(let i = 0; i < currentCategoriesArray.length; i++){ // el for recorre por indice. Recorre currentCategoriesArray que es una lista de categorias y es lo que se tiene que mostrar en html
+        let category = currentCategoriesArray[i]; // declara una variable categori y carga el elemento que está en la posicion i que está en currentCategoriesArray. Categori es el elemento que hay en esa posicion de la lista 
 
-        if (((minCount == undefined) || (minCount != undefined && parseInt(category.productCount) >= minCount)) &&
-            ((maxCount == undefined) || (maxCount != undefined && parseInt(category.productCount) <= maxCount))){
+        if (((minCount == undefined) || (minCount != undefined && parseInt(category.productCount) >= minCount)) && //si está vacio es undeined. ParseInt pasa un texto a numero
+            ((maxCount == undefined) || (maxCount != undefined && parseInt(category.productCount) <= maxCount))){ // si se cumple con todo esto pasa abajo para mostrar 
 
             htmlContentToAppend += `
-            <a href="category-info.html" class="list-group-item list-group-item-action">
+            <a href="category-info.html" class="list-group-item list-group-item-action"> 
                 <div class="row">
                     <div class="col-3">
                         <img src="` + category.imgSrc + `" alt="` + category.description + `" class="img-thumbnail">
@@ -60,10 +60,11 @@ function showCategoriesList(){
                 </div>
             </a>
             `
+            //el a hace que todo sea clickeable 
         }
-
-        document.getElementById("cat-list-container").innerHTML = htmlContentToAppend;
     }
+        document.getElementById("cat-list-container").innerHTML = htmlContentToAppend;
+    
 }
 
 function sortAndShowCategories(sortCriteria, categoriesArray){
