@@ -6,6 +6,7 @@ function validar(){
     let user = document.getElementById("usuario").value;
     let pass = document.getElementById("pass").value;
         if((user !="")&&(pass !="")){
+            SetUser();
             window.location.href="home.html";
         }
 
@@ -14,6 +15,15 @@ function validar(){
         }
 }
 
-document.addEventListener("DOMContentLoaded", function(e){
+//fucion que guarda los datos del usario
+function SetUser(){
+    let nombre = document.getElementById("usuario").value; // obtengo el valor del input
+    localStorage.setItem("user", nombre); // lo grardo en el local storage con set item y le doy un nombre al dato y un valor
+}
 
+
+
+document.addEventListener("DOMContentLoaded", function(e){
+   
+  
 });

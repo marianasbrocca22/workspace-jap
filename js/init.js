@@ -40,8 +40,20 @@ var getJSONData = function(url){
     });
 }
 
+//funcion que obtiene los datos del usario y que los muestra siempre y cuando nombre no este indefinido o vacio 
+function getUser(){
+  let nombre =localStorage.getItem("user");
+  if(nombre!=undefined && nombre!=""){
+      document.getElementById("nombreUsuario").innerHTML +=" "+ nombre;
+  }
+  else{
+      window.location.href = "index.html"
+  }
+}
+
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e){
+  getUser();
 });

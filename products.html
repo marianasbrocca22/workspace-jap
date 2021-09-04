@@ -20,7 +20,8 @@
         <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
         <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
         <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-        <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
+        <a class="py-2 d-none d-md-inline-block" href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+        <a id="nombreUsuario" class="py-2 d-none d-md-inline-block" href="#"><i class="fas fa-user"></i></a>
       </div>
     </nav>
 
@@ -32,6 +33,61 @@
           <p class="lead">Verás aquí todos los productos del sitio.</p>
       </div>
       <div class="container">
+        <!--filtros-->
+        <div class="row"> <!--primera fila de botones-->
+          <div class="col text-right">
+              <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
+                  <label class="btn btn-light active" id="sortcostAsc" >
+                      <input type="radio" name="options" autocomplete="off" checked>$<i class="fas fa-long-arrow-alt-down"></i>
+                  </label>
+                  <label class="btn btn-light" id="sortcostDesc" >
+                      <input type="radio" name="options" autocomplete="off">$<i class="fas fa-long-arrow-alt-up"></i>
+                  </label>
+                  <label class="btn btn-light" id="sortBySold" >
+                      <input type="radio" name="options" autocomplete="off">Más vendidos
+                  </label>
+              </div>
+          </div>
+      </div>
+      <div class="row justify-content-end"> <!--segunda fila de botones-->
+        <div class="col-md-6"></div>
+          <div class="col-md-6 col-sm-12 mb-1 container">
+            <div class="row container p-0 m-0">
+              
+              <div class="col">
+                <p class="font-weight-normal text-right my-2">Precio</p>
+              </div>
+              <div class="col">
+                <input class="form-control" type="number" placeholder="min." id="rangeFiltersoldcountMin">
+              </div>
+              <div class="col">
+                <input class="form-control" type="number" placeholder="máx." id="rangeFiltersoldcountMax">
+              </div>
+              <div class="col-3 p-0">
+                <div class="btn-group" role="group">
+                  <button class="btn btn-light btn-block" id="rangeProductFilter">Filtrar</button>
+                  <button class="btn btn-link btn-sm" id="clearRangeSoldCountFilter"><i class="fas fa-retweet"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+      <!--
+      <div class="row justify-content-end"> 
+        <div class="col-md-6"></div>
+          <div class="col-md-6 col-sm-12 mb-1 container">
+            <div class="row container p-0 m-0">
+              <div class="col">
+                <input type="text" id="buscador" onkeyup="search()" placeholder="Search for names..">
+              </div>
+            </div>
+            </div>
+            </div> -->
+            
+
+
+
+      <!--lista de productos-->
         <div class="row">
           <div class="list-group" id="prod-list-container">
           </div>
