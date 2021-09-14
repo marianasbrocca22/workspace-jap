@@ -16,14 +16,16 @@
 </head>
 
 <body>
+  <!--Responsive Menu-->
   <nav class="site-header sticky-top py-1 bg-dark">
-    <div class="container d-flex flex-column flex-md-row justify-content-between">
-      <a class="py-2 d-none d-md-inline-block" href="home.html">Inicio</a>
-        <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
-        <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
-        <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-        <a class="py-2 d-none d-md-inline-block" href="cart.html"><i class="fas fa-shopping-cart"></i></a>
-        <a id="nombreUsuario" class="py-2 d-none d-md-inline-block" href="#"><i class="fas fa-user"></i></a>
+    <div class="container d-flex flex-column flex-md-row justify-content-between topmenu " id="menu">
+      <a  href="home.html">Inicio</a>
+      <a  href="categories.html">Categorías</a>
+      <a  href="products.html">Productos</a>
+      <a  href="sell.html">Vender</a>
+      <a  href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+      <a id="nombreUsuario"  href="#"><i class="fas fa-user"></i></a>
+      <a href="javascript:void(0);" class="icon" onclick="changeMenue()"><i class="fa fa-bars"></i></a>
     </div>
   </nav>
 
@@ -32,33 +34,63 @@
       <div class="text-center p-4">
         <h2>Descripción de productos</h2>
         <!--<p class="lead">Encontrarás aquí toda la información de la categoría seleccionada.</p>-->
-        <p class="small alert-warning py-3"><strong>Nota: </strong>por simplicidad, cualquiera sea la categoría
-          seleccionada previamente, siempre se visualizará la presente: <strong>Autos</strong>.</p>
+        <p class="small alert-warning py-3"><strong>Nota: </strong>por simplicidad, cualquiera sea el producto
+          seleccionado previamente, siempre se visualizará el mismo: <strong>Chevrolet Onix Joy</strong>.</p>
       </div>
-      <h3 id="productName"></h3>
-      <hr class="my-3">
-      <dl>
-        <dt>Descripción</dt>
-        <dd>
-          <p id="productDescription"></p>
-        </dd>
 
-        <dt>Cantidad de productos en la categoría</dt>
-        <dd>
-          <p id="productCount"></p>
-        </dd>
 
-        <dt>Criterio para incluir productos en esta categoría</dt>
-        <dd>
-          <p id="productCriteria"></p>
-        </dd>
-
-        <dt>Imágenes ilustrativas</dt>
-        <dd>
-          <div class="row text-center text-lg-left pt-2" id="productImagesGallery">
+      <div class="row">
+          <div class="col-6" >
+            <h3 id="productName"></h3>
           </div>
-        </dd>
-      </dl>
+      </div>
+      <div class="row">
+        
+          <div class="col-6" >
+            <div id="productImagesGallery"></div>
+          </div>
+          <div class="col-6" >
+            <p id="productDescription"></p>
+            <h4> <span id="productCurrency"></span> <span id="productCost"></span></h4>
+            
+            <p>Cantidad de productos vendidos: <span id="productSoldCount"></span> </p>
+            <p>Categoría del producto: <span id="productCategory"></span> </p>
+            
+          
+        </div>
+      </div>
+      <div class="row">
+        <div id="oldcoments"></div>
+        <div id="addcoment" class="form-group">
+          <label for="coment">Agrega un comentario</label>
+          <textarea name="" id="coment" placeholder="Escribe aquí tu comentario" cols="50" rows="5" class="form-control"></textarea>
+          <label class="checkeable">
+            <input type="checkbox" name="star1"/>
+            <i class="fa fa-star"></i>
+          </label>
+          <label class="checkeable">
+            <input type="checkbox" name="star2"/>
+            <i class="fa fa-star"></i>
+          </label>
+          <label class="checkeable">
+            <input type="checkbox" name="star3"/>
+            <i class="fa fa-star"></i>
+          </label>
+          <label class="checkeable">
+            <input type="checkbox" name="star4"/>
+            <i class="fa fa-star"></i>
+          </label>
+          <label class="checkeable">
+            <input type="checkbox" name="star5"/>
+            <i class="fa fa-star"></i>
+          </label>
+          
+          <button type="submit" id="enviar" class="btn btn-secondary">Enviar comentario</button>
+
+        </div>
+      </div>
+
+
       <a type="button" class="btn btn-light btn-lg btn-block" href="products.html">Ver productos</a>
     </div>
   </main>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!-- saved from url=(0049)https://getbootstrap.com/docs/4.3/examples/album/ -->
 <html lang="en">
-
+<!--info-->
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -17,14 +17,16 @@
 </head>
 
 <body>
+  <!--Responsive Menu-->
   <nav class="site-header sticky-top py-1 bg-dark">
-    <div class="container d-flex flex-column flex-md-row justify-content-between">
-      <a class="py-2 d-none d-md-inline-block" href="home.html">Inicio</a>
-        <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
-        <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
-        <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-        <a class="py-2 d-none d-md-inline-block" href="cart.html"><i class="fas fa-shopping-cart"></i></a>
-        <a id="nombreUsuario" class="py-2 d-none d-md-inline-block" href="#"><i class="fas fa-user"></i></a>
+    <div class="container d-flex flex-column flex-md-row justify-content-between topmenu " id="menu">
+      <a  href="home.html">Inicio</a>
+      <a  href="categories.html">Categorías</a>
+      <a  href="products.html">Productos</a>
+      <a  href="sell.html">Vender</a>
+      <a  href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+      <a id="nombreUsuario"  href="#"><i class="fas fa-user"></i></a>
+      <a href="javascript:void(0);" class="icon" onclick="changeMenue()"><i class="fa fa-bars"></i></a>
     </div>
   </nav>
   <main role="main">
