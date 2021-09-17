@@ -54,7 +54,7 @@ function getUser(){
 function changeMenue() {
   var x = document.getElementById("menu");
   if (x.className === "topmenu") {
-    x.className += " responsive";
+    x.className += "responsive";
   } else {
     x.className = "topmenu";
   }

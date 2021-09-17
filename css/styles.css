@@ -208,3 +208,8 @@ a.custom-card:hover {
 .checkeable input:checked  + i {
   color: orange;
 }
+
+.iconUser{
+  width: 5%;
+  height: auto;
+}

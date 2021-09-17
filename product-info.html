@@ -61,33 +61,27 @@
       </div>
       <div class="row">
         <div id="oldcoments"></div>
-        <div id="addcoment" class="form-group">
-          <label for="coment">Agrega un comentario</label>
-          <textarea name="" id="coment" placeholder="Escribe aquí tu comentario" cols="50" rows="5" class="form-control"></textarea>
-          <label class="checkeable">
-            <input type="checkbox" name="star1"/>
-            <i class="fa fa-star"></i>
-          </label>
-          <label class="checkeable">
-            <input type="checkbox" name="star2"/>
-            <i class="fa fa-star"></i>
-          </label>
-          <label class="checkeable">
-            <input type="checkbox" name="star3"/>
-            <i class="fa fa-star"></i>
-          </label>
-          <label class="checkeable">
-            <input type="checkbox" name="star4"/>
-            <i class="fa fa-star"></i>
-          </label>
-          <label class="checkeable">
-            <input type="checkbox" name="star5"/>
-            <i class="fa fa-star"></i>
-          </label>
+      </div>
+        
+      <div class="row">
+          <form id="comentFor" class="form-group col-6">
+            <div id="addcoment">
+              <div id="newcoment"></div>
+                <label for="coment">Agrega un comentario</label>
+                <textarea name="" id="coment" placeholder="Escribe aquí tu comentario" cols="50" rows="5" class="form-control"></textarea>
+                
+                <select id="addScore" name="stars">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select><br>
           
-          <button type="submit" id="enviar" class="btn btn-secondary">Enviar comentario</button>
+          <button type="button" id="enviar" class="btn btn-secondary" onclick="saveComent()">Enviar</button>
 
         </div>
+      </form>
       </div>
 
 
