@@ -5,6 +5,7 @@ let newcomentsArray = []; //lista para nuevos comentarios
 //guardar y mostrar nuevos comentarios
 function showComents(){
     let htmlContentToAppend = "";
+    //var activeCarru = document.getElementById("carruselActivo");
 
     for(let i = newcomentsArray.length -1; i >=0; i--){
         let comentario = newcomentsArray[i];
@@ -76,8 +77,7 @@ function showProductImages(array) {
 
         <div class="carousel-item">
               <img src="${imageSrc}" alt="">
-            </div>
-        `
+            </div>`
 
         document.getElementById("productImagesGallery").innerHTML = htmlContentToAppend;
     };
