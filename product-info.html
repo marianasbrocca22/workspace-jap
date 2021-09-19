@@ -33,63 +33,66 @@
     <div class="container mt-5">
       <div class="text-center p-4">
         <h2>Descripción de productos</h2>
-        <!--<p class="lead">Encontrarás aquí toda la información de la categoría seleccionada.</p>-->
         <p class="small alert-warning py-3"><strong>Nota: </strong>por simplicidad, cualquiera sea el producto
           seleccionado previamente, siempre se visualizará el mismo: <strong>Chevrolet Onix Joy</strong>.</p>
       </div>
 
-
+<!--Mostrar producto-->
       <div class="row">
           <div class="col-6" >
             <h3 id="productName"></h3>
           </div>
       </div>
+<!--Carousel-->
       <div class="row">
-        
           <div class="col-6" >
-            <div id="productImagesGallery"></div>
+            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+              <div class="carousel-inner" id="productImagesGallery">
+              </div>
+          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+          </a>
+            </div>
           </div>
+<!--Características-->
           <div class="col-6" >
             <p id="productDescription"></p>
             <h4> <span id="productCurrency"></span> <span id="productCost"></span></h4>
             
             <p>Cantidad de productos vendidos: <span id="productSoldCount"></span> </p>
-            <p>Categoría del producto: <span id="productCategory"></span> </p>
-            
-          
+            <p>Categoría del producto: <span id="productCategory"></span> </p> 
         </div>
       </div>
+<!--Lista de comentarios-->
       <div class="row">
         <div id="oldcoments"></div>
-        <div id="addcoment" class="form-group">
-          <label for="coment">Agrega un comentario</label>
-          <textarea name="" id="coment" placeholder="Escribe aquí tu comentario" cols="50" rows="5" class="form-control"></textarea>
-          <label class="checkeable">
-            <input type="checkbox" name="star1"/>
-            <i class="fa fa-star"></i>
-          </label>
-          <label class="checkeable">
-            <input type="checkbox" name="star2"/>
-            <i class="fa fa-star"></i>
-          </label>
-          <label class="checkeable">
-            <input type="checkbox" name="star3"/>
-            <i class="fa fa-star"></i>
-          </label>
-          <label class="checkeable">
-            <input type="checkbox" name="star4"/>
-            <i class="fa fa-star"></i>
-          </label>
-          <label class="checkeable">
-            <input type="checkbox" name="star5"/>
-            <i class="fa fa-star"></i>
-          </label>
-          
-          <button type="submit" id="enviar" class="btn btn-secondary">Enviar comentario</button>
-
-        </div>
       </div>
-
+<!--Ingresar comentarios-->        
+      <div class="row">
+          <form id="comentFor" class="form-group col-6">
+            <div id="addcoment">
+              <div id="newcoment"></div>
+                <label for="coment">Agrega un comentario</label>
+                <textarea name="" id="coment" placeholder="Escribe aquí tu comentario" cols="50" rows="5" class="form-control"></textarea>
+                
+                <select id="addScore" name="stars">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select><br>
+          
+          <button type="button" id="enviar" class="btn btn-secondary" onclick="saveComent()">Enviar</button>
+        </div>
+      </form>
+      </div>
+<!--Termina entrega 3-->
 
       <a type="button" class="btn btn-light btn-lg btn-block" href="products.html">Ver productos</a>
     </div>
