@@ -1,6 +1,7 @@
 var product = {}; //objeto de info de producto
 var commentsArray = []; //lista de comentarios
 let newcomentsArray = []; //lista para nuevos comentarios
+let relatedProduct =[];
 
 //guardar y mostrar nuevos comentarios
 function showComents(){
@@ -67,8 +68,7 @@ function addStars(stars){
 //Mostrar imagenes como carrusell
 function showProductImages(array) {
     let htmlContentToAppend = "";
-    htmlContentToAppend += `<div class="carousel-item active"> <img src="${array[0]}" alt="">
-    </div>`
+    htmlContentToAppend += `<div class="carousel-item active"> <img src="${array[0]}" alt=""></div>`
 
     for (let i = 1; i < array.length; i++) {
         let imageSrc = array[i];
@@ -82,7 +82,6 @@ function showProductImages(array) {
         document.getElementById("productImagesGallery").innerHTML = htmlContentToAppend;
     };
 };
-
 
 
 //agregar la lista de comentarios y mostrarla
@@ -110,6 +109,31 @@ document.getElementById("oldcoments").innerHTML =htmlContentToAppend;
 };
 
 
+//funcion que muestra los productos relacionados 
+function showRelatedProducts(array){
+    let htmlContentToAppend = "";
+    for(let i = 0; i< array.length; i++){
+        let related = array[i];
+        htmlContentToAppend += `
+        <a href="product-info.html" class="list-group-item list-group-item-action">
+                <div class="row">
+                    <div class="col-3">
+                        <img src="${relatedProduct[related].imgSrc}" alt="${relatedProduct[related].description}" class="img-thumbnail">
+                    </div>
+                    <div class="col">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h4 class="mb-1">${relatedProduct[related].name}</h4>
+                            <small class="text-muted">${relatedProduct[related].soldCount }artículos vendidos</small>
+                        </div>
+                        <p class="mb-1">${relatedProduct[related].description}</p>
+                        <p class="mb-1">${relatedProduct[related].currency} ${relatedProduct[related].cost}</p>
+                    </div>
+                </div>
+            </a>
+            `
+    }
+    document.getElementById("relatedProducts").innerHTML =htmlContentToAppend;
+};
 
 
 
@@ -142,6 +166,16 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
             //Muestro las imagenes en carousel
             showProductImages(product.images);
+
+            //se hace la petición de la lista de los productos
+            getJSONData(PRODUCTS_URL).then(respuesta=>{
+                if(respuesta.status === "ok"){
+                 relatedProduct = respuesta.data;
+
+                 showRelatedProducts(product.relatedProducts)
+                 //mostrar productos relacionados de la lista de productos totales  
+                }
+            })
         }
     });
 });
@@ -151,6 +185,8 @@ document.addEventListener("DOMContentLoaded", function (e) {
         if (resultObj.status === "ok") {
             commentsArray = resultObj.data;
             addComents(commentsArray);
+
+            
 
         }
     });
