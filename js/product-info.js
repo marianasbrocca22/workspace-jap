@@ -87,7 +87,7 @@ function showProductImages(array) {
 //agregar la lista de comentarios y mostrarla
 function addComents(commentsArray){
    
-   let htmlContentToAppend = `<p><a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+   let htmlContentToAppend = `<p><a class="btn btn-primary mt-3" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
    Mostrar comentarios</a></p>`;
     for(let i = 0; i < commentsArray.length; i++){ // el for recorre por indice. Recorre currentCategoriesArray que es una lista de categorias y es lo que se tiene que mostrar en html
         let coment = commentsArray[i]; // declara una variable categori y carga el elemento que está en la posicion i que está en currentCategoriesArray. Categori es el elemento que hay en esa posicion de la lista 
